@@ -1,4 +1,4 @@
 com/piladores/compiladores/Compiladores.class
-com/piladores/compiladores/Scanner.class
 com/piladores/compiladores/TipoToken.class
+com/piladores/compiladores/Scanner.class
 com/piladores/compiladores/Token.class

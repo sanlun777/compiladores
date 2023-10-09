@@ -187,8 +187,14 @@ public class Scanner {
                         lexema = "";
                         break;
                     }
+                    
+                    if(esRango(c, "/")){
+                        estadonuevo = 26;
+                        break;
+                    }
                     //Desechar
                     if(esRango(c, "\n\r ")){
+                        linea++;
                         lexema = "";
                         estadonuevo = 0;
                         break;
@@ -371,7 +377,7 @@ public class Scanner {
                         break;
                     }
                     
-                    estadonuevo = 26;
+                    estadonuevo = 0;
                     tokens.add(new Token(TipoToken.SLASH, lexema));
                     lexema = "";
                     i--;
