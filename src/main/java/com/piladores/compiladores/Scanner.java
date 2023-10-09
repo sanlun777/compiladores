@@ -193,8 +193,19 @@ public class Scanner {
                         break;
                     }
                     //Desechar
-                    if(esRango(c, "\n\r ")){
+                    if(esRango(c, "\n")){
                         linea++;
+                        lexema = "";
+                        estadonuevo = 0;
+                        break;
+                    }
+                    
+                    if(esRango(c, "\r")){
+                        lexema = "";
+                        estadonuevo = 0;
+                        break;
+                    }
+                    if(esRango(c, " ")){
                         lexema = "";
                         estadonuevo = 0;
                         break;
@@ -420,7 +431,7 @@ public class Scanner {
             }
             
             if(estadonuevo == -1){
-                Compiladores.error(linea, "No hay transiciones para el caractér en " + linea);
+                Compiladores.error(linea, "No hay transiciones para el caractér en " + linea + " '" + c + "'");
                 estadonuevo = 0;
             }
             
